@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
     font-family: charter;
     src: url('../fonts/charter-regular.otf');
     font-style: normal;
@@ -14,14 +14,14 @@
     font-family: charter;
     src: url('../fonts/charter-bold.otf');
     font-style: normal;
-    font-weight: bold; /* 700 */
+    font-weight: bold; /* 700 
 }
 @font-face {
     font-family: charter;
     src: url('../fonts/charter-bold-italic.otf');
     font-style: italic;
     font-weight: bold;
-}
+} */
 
 :root {
     font-size: 18px;
@@ -31,12 +31,14 @@
 }
 
 body {
-    font-family: charter;
+    /* font-family: charter; */
+    font-family: Roboto;
     color: var(--gray30);
 }
 
 a {
     color: var(--gray30);
+    text-decoration: none;
 }
 
 header {
@@ -68,4 +70,25 @@ h2 {
 
 h3 {
     font-size: 1.5em;
+}
+
+pre {
+    background-color: #FEC62E;
+}
+
+.hero {
+    height: 350px;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, .3), transparent), url('../images/pattern_bg.png');
+}
+
+h3::before {
+    content: '-';
+}
+
+h3::after {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 4px;
+    color: var(--gray30);
 }
