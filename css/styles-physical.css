@@ -1,0 +1,229 @@
+/* @font-face {
+    font-family: charter;
+    src: url('../fonts/charter-regular.otf');
+    font-style: normal;
+    font-weight: 400;
+}
+@font-face {
+    font-family: charter;
+    src: url('../fonts/charter-italic.otf');
+    font-style: italic;
+    font-weight: 400;
+}
+@font-face {
+    font-family: charter;
+    src: url('../fonts/charter-bold.otf');
+    font-style: normal;
+    font-weight: bold; /* 700 
+}
+@font-face {
+    font-family: charter;
+    src: url('../fonts/charter-bold-italic.otf');
+    font-style: italic;
+    font-weight: bold;
+} */
+
+:root {
+    font-size: 18px;
+    --gray30: #212121;
+    --gray20: #212429;
+    --gray10: #616161;
+}
+
+/*  Recurso para poder ver dónde se renderiza un elemento
+    html, poniendo (o agregando) la clase "debug" a dicho
+    elemento en el html  */
+.debug {
+    outline: 1px solid red;
+    /* o también con   box-shadow: 0 0 0 1px red;   */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* font-family: charter; */
+    font-family: Roboto;
+    color: var(--gray30);
+    margin: 0;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+}
+
+.header-content {
+    position: relative;
+}
+
+/* .main {
+    background: violet;
+} */
+
+.wrapper {
+    width: 902px;
+    margin: auto;
+}
+
+/* .main-content {
+    background: white; 
+    padding: 0 20px;
+    position: relative;
+} */
+
+a {
+    color: var(--gray30);
+    text-decoration: none;
+}
+
+header {
+    /* --gray10: green; */
+    width: 208px;
+    margin-right: 24px;
+    position: absolute;
+    top: 64px;
+    left: -232px;
+    font-size: 14px;
+    color: var(--gray10);
+}
+
+header li {
+    margin-bottom: 16px;
+}
+
+header a {
+    color: var(--gray10);
+    text-decoration: none;
+}
+
+header a:hover {
+    color: var(--gray30);
+}
+
+nav details summary {
+    font-weight: bold;
+    line-height: 24px;
+}
+
+hr {
+    margin: 64px 0;
+}
+
+.section-content + hr {
+    display: none;
+}
+
+h1 + p {
+    margin-bottom: 64px;
+}
+
+h1 {
+    font-size: 60px;
+    margin-top: 64px;
+    margin-bottom: 16px;
+    font-weight: 400;
+    width: 966px;
+    height: 70px;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: 400;
+    margin: 64px 0 0 0;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: 400;
+    margin: 40px 0 24px 0;
+    position: sticky;
+    top: 0;
+    background: white;
+}
+
+/* h3 + p:only-of-type {
+    color: red;
+} */
+
+blockquote {
+    font-size: 24px;
+    /* line-height: 32px; */
+    margin: 32px 0;
+    padding-left: 16px;
+    border-left: 4px solid var(--gray30);
+}
+
+blockquote span {
+    color: var(--gray10);
+}
+
+blockquote span::before {
+    content: '- ';
+}
+
+/* blockquote p:first-of-type {
+    margin: 32px 0 16px;
+} */
+
+.section-content img {
+    margin-top: 40px;
+}
+
+pre {
+    background-color: #FEC62E;
+    font-family: 'Roboto';
+    font-size: 16px;
+    line-height: 24px;
+    padding: 40px;
+}
+
+.hero {
+    height: 350px;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, .3), transparent), url('../images/pattern_bg.png');
+}
+
+.section-content {
+    margin-top: 164px;
+}
+
+.section-content:first-of-type {
+    margin-top: 0;
+}
+.section-content {
+    counter-reset: titleList;
+}
+/* Funcionaba igual sin poner el counter-reset. O sea que es 
+redundante. Ver si se resetea al cambiar de Section */
+
+.section-content h3 {
+    counter-increment: titleList;
+    padding-bottom: 8px;
+}
+
+.section-content h3::before {
+    content: counter(titleList) '. ';
+}
+/* Asume por default counter(titleList, decimal) y por eso hace
+   un numerado decimal. Podría ser, p.ej, upper-roman y haría un
+   numerado romano en mayúsculas*/
+
+.section-content h3::after {
+    content: '';
+    display: inline-block;
+    width: 80px;
+    height: 4px;
+    background: var(--gray30);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.section-content ul li {
+    margin-bottom: 16px;
+}
+
+.section-content ol li {
+    line-height: 24px;
+}
