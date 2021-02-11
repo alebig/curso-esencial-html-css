@@ -50,11 +50,12 @@ a {
 
 .header {
     position: sticky;
-    inset-block-start: 10px;
+    inset-block-start: 0;
 }
 
 .header-content {
     position: relative;
+    inset-block-start: 70px;
 }
 
 header {
