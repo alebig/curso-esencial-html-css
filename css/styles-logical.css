@@ -48,18 +48,28 @@ a {
     margin: auto;
 }
 
-.main hr {
-    display: none;
+.header {
+    position: sticky;
+    inset-block-start: 10px;
+}
+
+.header-content {
+    position: relative;
 }
 
 header {
     /* --gray10: green; */
     font-size: 14px;
     color: white;
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: -208px;
+    inline-size: 188px;
 }
 
 header li {
-    color: var(--gray20)
+    color: var(--gray20);
+    margin-block-end: 16px;
 }
 
 header a {
@@ -75,9 +85,15 @@ nav details summary {
     font-weight: bold;
 }
 
+.main-content {
+    padding-inline: 16px;
+}
+
 h1 {
     font-size: 60px;
     font-weight: normal;
+    margin-block-start: 64px;
+    margin-block-end: 16px;
 }
 
 h2 {
@@ -87,6 +103,13 @@ h2 {
 
 h3 {
     font-size: 1.5em;
+    font-weight: 600;
+    margin-block: 16px;
+}
+
+hr {
+    margin-block: 40px;
+    border: 1px solid rgba(97, 97, 97, 0.2);
 }
 
 p {
@@ -95,11 +118,18 @@ p {
 
 pre {
     background-color: var(--gray25);
+    padding: 40px;
+    overflow: auto;
+    border-radius: 8px;
 }
 
 .hero {
     height: 350px;
     background: linear-gradient(96.07deg, #314755 30.63%, #26A0DA 102.18%);
+}
+
+.section-content hr {
+    display: none;
 }
 
 .section-content ol, .section-content ul {
@@ -123,16 +153,21 @@ redundante. Ver si se resetea al cambiar de Section */
 }
 
 .section-content h3::before {
-    content: counter(titleList);
+    content: counter(titleList,decimal)'. ';
 }
 /* Asume por default counter(titleList, decimal) y por eso hace
    un numerado decimal. Podría ser, p.ej, upper-roman y haría un
    numerado romano en mayúsculas*/
 
-.section-content h3::after {
-    content: '';
-    display: inline-block;
-    width: 32px;
-    height: 4px;
-    color: var(--gray30);
+blockquote {
+    margin-block-start: 80px;
+    margin-block-end: 63px;
+    background-color: var(--gray25);
+    border-radius: 8px;
+    padding: 24px;
+}
+
+blockquote p {
+    font-size: 24px;
+    line-height: 32px;
 }
