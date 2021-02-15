@@ -172,3 +172,50 @@ blockquote p {
     font-size: 24px;
     line-height: 32px;
 }
+
+.slider a   {
+    color: white;
+    text-decoration: none;
+}
+
+p a   {
+    color: white;
+    text-decoration: none;
+}
+
+.slider-container {
+    /* block-size: 100px; */
+    display: block;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    font-size: 0;
+    /* el font-size: 0; evita que aparezca entre las imágenes
+    del slider una línea vertical, que aparecería entre los
+    elementos de .video, que son inline-block*/
+}
+
+.video {
+    margin: 0;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+}
+
+.slider-bullet-list {
+    /* display: inline; */
+    text-align: center;
+    margin-block-start: 6px;
+}
+
+.bullet {
+    display: inline-block;
+    /* width: 15px;
+    height: 15px; */
+    inline-size: 15px;
+    block-size: 15px;
+    border-radius: 50%;
+    background-color: white;
+    margin-inline-start: 3px;
+}
