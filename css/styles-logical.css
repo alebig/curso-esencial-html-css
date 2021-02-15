@@ -31,6 +31,10 @@
     /* --gray10: #616161; */
 }
 
+/* html {
+    scroll-behavior: smooth;
+} */
+
 body {
     /* font-family: charter; */
     font-family: Nunito;
@@ -49,23 +53,24 @@ a {
 }
 
 .header {
-    position: sticky;
-    inset-block-start: 0;
+    /* position: sticky;
+    inset-block-start: 0; */
 }
 
 .header-content {
-    position: relative;
-    inset-block-start: 70px;
+    /* position: relative; */
+    margin-block-start: 20px;
+    padding-inline: 10px;
 }
 
 header {
     /* --gray10: green; */
     font-size: 14px;
     color: white;
-    position: absolute;
+    /* position: absolute;
     inset-block-start: 0;
     inset-inline-start: -208px;
-    inline-size: 188px;
+    inline-size: 188px; */
 }
 
 header li {
@@ -91,9 +96,9 @@ nav details summary {
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 40px;
     font-weight: normal;
-    margin-block-start: 64px;
+    margin-block-start: 20px;
     margin-block-end: 16px;
 }
 
@@ -125,7 +130,7 @@ pre {
 }
 
 .hero {
-    block-size: 350px;
+    block-size: 50px;
     background: linear-gradient(96.07deg, #314755 30.63%, #26A0DA 102.18%);
 }
 
@@ -185,7 +190,7 @@ p a   {
 
 .slider-container {
     /* block-size: 100px; */
-    display: block;
+    display: inline-block;
     overflow: hidden;
     scroll-behavior: smooth;
     white-space: nowrap;
@@ -243,4 +248,33 @@ p a   {
 .form input[type="submit"] {
     background-color: #157EFB;
     border: none;
+}
+
+@media screen and (min-width: 1366px) {
+    .hero {
+        block-size: 350px;
+    }
+
+    .header {
+        position: sticky;
+        inset-block-start: 0;
+    }
+    
+    .header-content {
+        position: relative;
+        inset-block-start: 70px;
+        padding-inline: 0;
+    }
+    
+    header {
+        position: absolute;
+        inset-block-start: 0;
+        inset-inline-start: -208px;
+        inline-size: 188px;
+    }
+
+    h1 {
+        font-size: 60px;
+        margin-block-start: 64px;
+    }
 }
